@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace GymManagmentDAL.Entities;
 
-namespace GymManagmentDAL.Entities
+public class Plan :BaseEntity
 {
-    public class Plan :BaseEntity
-    {
-        public string Name { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-        public string Description { get; set; } = null!;
-        public  int DurationDays { get; set; }
+    public string Description { get; set; } = null!;
+    public  int DurationDays { get; set; }
 
-        public  decimal  Price { get; set; }
+    public  decimal  Price { get; set; }
 
-        public  bool IsActive { get; set; }
-        public ICollection<MemberShip> PalnMember = null!;
-    }
+    public  bool IsActive { get; set; }
+    public ICollection<MemberShip> PalnMember = null!;
 }

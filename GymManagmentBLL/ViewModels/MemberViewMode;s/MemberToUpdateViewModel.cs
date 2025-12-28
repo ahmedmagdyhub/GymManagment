@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace GymManagmentBLL.ViewModels.MemberViewMode_s
 {
-    internal class MemberToUpdateViewModel
+    public  class MemberToUpdateViewModel
     {
+        
         public string Name { get; set; } = null!; // Property Name is visible
 
         public string? Photo { get; set; }  // Property Photo is visible
@@ -23,8 +24,8 @@ namespace GymManagmentBLL.ViewModels.MemberViewMode_s
 
         // Phone Validation (Visible)
         [Required(ErrorMessage = "Phone Is Required!")]
-        [RegularExpression(@"^(010|011|012|015)\d{8}$", ErrorMessage = "Phone Number Must Be Valid Egyptian PhoneNumber!")] // Partially visible in first set of images
-        [DataType(DataType.PhoneNumber)]
+        //[RegularExpression(@"^(010|011|012|015)\d{8}$", ErrorMessage = "Phone Number Must Be Valid Egyptian PhoneNumber!")] // Partially visible in first set of images
+        //[DataType(DataType.PhoneNumber)]
         public string Phone { get; set; } = null!;
 
         // Building Number Validation (Visible)

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace GymManagmentBLL.ViewModels.PlanViewModels
+namespace GymManagmentBLL.ViewModels.PlanViewModels;
+
+public  class PlanViewModel
 {
-    internal class PlanViewModel
-    {
-        public  int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public  int DurationDayes { get; set; }
+    public  int Id { get; set; }
+    public string Name { get; set; } = null!;
+    public  int DurationDayes { get; set; }
 
-        public  string  Description { get; set; }
+    public  string?  Description { get; set; }
 
-        public  decimal  price { get; set; }
+    public  decimal  price { get; set; }
 
-        public  bool IsActive { get; set; }
-    }
+    public  bool IsActive { get; set; }
 }

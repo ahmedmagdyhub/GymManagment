@@ -17,4 +17,8 @@
     <ProjectReference Include="..\GymManagmentBLL\GymManagmentBLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\MemberController1\" />
+  </ItemGroup>
+
 </Project>

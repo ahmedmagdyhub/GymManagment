@@ -1,3 +1,6 @@
+using GymManagmentBLL;
+using GymManagmentBLL.Service.Classes;
+using GymManagmentBLL.Service.InterFaces;
 using GymManagmentDAL.Data.Context;
 using GymManagmentDAL.DataSeeding;
 using GymManagmentDAL.Repository;
@@ -22,6 +25,13 @@ namespace GymManagmentPL
             //builder.Services.AddScoped<IPlanRepo, PlanRepo>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<ISessionRepo, SessionRepo>();
+            builder.Services.AddScoped<IAnalyticsServise, AnalyticsServise>();
+            builder.Services.AddScoped<IMemberService, MemberService>();
+            builder.Services.AddScoped<ITrainerServise, TrainerService>();
+            builder.Services.AddScoped<IPlanService, PlanServise>();
+            builder.Services.AddScoped<ISessionService, SessionService>();
+
+            builder.Services.AddAutoMapper(x => x.AddProfile(new MappingProfile()));
             var app = builder.Build();
             #region Dataseeding
             using var scope = app.Services.CreateScope();
@@ -33,6 +43,7 @@ namespace GymManagmentPL
             }
             GymDbContextSeeding.SeedData(dbcontext, app.Environment.ContentRootPath);
             #endregion 
+
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
