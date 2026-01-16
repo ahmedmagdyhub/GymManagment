@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<MemberViewModel>
 
+@{
+    ViewData["Title"] = "Members";
+}
 
 @if (TempData["SuccessMessage"] is not null){
     <div id="Alert" class="alert alert-success alert-dismissible fade show">
@@ -45,12 +48,12 @@
                                         <span class="avatar">
                                             @if (string.IsNullOrEmpty(member.photo))
                                             {
-                                                <img src="~/images/User.jpg" alt="Default Avatar" class="rounded-circle"
+                                                <img src="~/images/User" alt="Default Avatar" class="rounded-circle"
                                                      style="width: 40px; height: 40px;" />
                                             }
                                             else
                                             {
-                                                <img src="~/images/@member.photo" alt="Default Avatar" class="rounded-circle"
+                                                <img src="~/images/members/@member.photo" alt="Default Avatar" class="rounded-circle"
                                                      style="width: 40px; height: 40px;" />
                                             }
                                         </span>
@@ -64,14 +67,14 @@
                                             <button class="btn btn-link p-0 border-0" type="button"
                                                     id="dropdownMenuButton-@member.Id" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
-                                                <img src="~/images/action dots.jpg" alt="action icon" />
-                                            </button>
+                                        <i class="bi bi-three-dots fs-5 text-dark"></i>
+                                    </button>
                                             <ul class="dropdown-menu dropdown-menu-start"
                                                 aria-labelledby="dropdownMenuButton-@member.Id">
                                                 <li>
                                             <a asp-controller="Member" asp-action="MemberDetails" asp-route-id="@member.Id"
                                                        class="dropdown-item d-flex align-items-center gap-3">
-                                                        <img src="~/images/info 1.jpg" alt="info icon"
+                                                        <img src="~/images/info 1" alt="info icon"
                                                              style="width: 20px; height: 20px;" />
                                                         <span>View Member Data</span>
                                                     </a>
@@ -79,7 +82,7 @@
                                                 <li>
                                             <a asp-controller="Member" asp-action="HealthRecordDeatails" asp-route-id="@member.Id"
                                                        class="dropdown-item d-flex align-items-center gap-3">
-                                                        <img src="~/images/info 1.jpg" alt="info icon"
+                                                        <img src="~/images/info 1" alt="info icon"
                                                              style="width: 20px; height: 20px;" />
                                                         <span>View Health Record Data</span>
                                                     </a>
@@ -90,7 +93,7 @@
                                                 <li>
                                             <a asp-controller="Member" asp-action="MemberEdit" asp-route-id="@member.Id"
                                                        class="dropdown-item d-flex align-items-center gap-3">
-                                                        <img src="~/images/edit.jpg" alt="edit icon"
+                                                        <img src="~/images/edit" alt="edit icon"
                                                              style="width: 20px; height: 20px;" />
                                                         <span>Edit Member Data</span>
                                                     </a>
@@ -101,7 +104,7 @@
                                                 <li>
                                             <a asp-controller="Member" asp-action="Delete" asp-route-id="@member.Id"
                                                        class="dropdown-item d-flex align-items-center gap-3 text-danger">
-                                                        <img src="~/images/x-circle 1.jpg" alt="delete icon"
+                                                        <img src="~/images/x-circle 1" alt="delete icon"
                                                              style="width: 20px; height: 20px;" />
                                                         <span>Delete</span>
                                                     </a>

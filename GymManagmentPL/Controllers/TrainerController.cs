@@ -53,10 +53,11 @@ namespace GymManagmentPL.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = "Member Failed To create";
+                TempData["ErrorMessage"] = "Trainer Failed To create";
             }
             return RedirectToAction(nameof(Index));
         }
+       
         public ActionResult Edit(int id)
         {
             var trainer = _trainerServise.GetTrainerToUpdate(id);
@@ -82,7 +83,7 @@ namespace GymManagmentPL.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = "Member Failed To Upadet";
+                TempData["ErrorMessage"] = "Trainer Failed To Upadet";
             }
             return RedirectToAction(nameof(Index));
 
@@ -115,7 +116,7 @@ namespace GymManagmentPL.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = "Member Failed To Delete";
+                TempData["ErrorMessage"] = "Trainer Failed To Delete";
             }
             return RedirectToAction(nameof(Index));
 

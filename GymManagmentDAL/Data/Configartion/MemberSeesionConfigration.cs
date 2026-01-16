@@ -14,12 +14,6 @@ namespace GymManagmentDAL.Data.Configartion
         void IEntityTypeConfiguration<MemberSession>.Configure(EntityTypeBuilder<MemberSession> builder)
         {
             builder.Property(X => X.CreatedAt).HasColumnName("BookingDay");
-            builder.HasKey(A => new
-            {
-                A.MemberId,
-                A.SessionId
-            });
-            builder.Ignore(A => A.Id);
-        }
+         }
     }
 }

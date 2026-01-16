@@ -10,8 +10,8 @@ public class MemberShip : BaseEntity
         get
         {
             if (EndDate > DateTime.Now)
-                return "Expired";
-            else return "Active";
+                return "Active";
+            else return "Expired";
         } }
            
     public  int MemberID { get; set; }

@@ -25,17 +25,17 @@ namespace GymManagmentPL.Controllers
         {
             if (id <= 0)
             {
-                TempData["ErrorMessage"] = "Invalid id of session";
+                TempData["ErrorMessage"] = "Invalid id ";
                 return RedirectToAction(nameof(Index));
             }
-            var session = _sessionService.GetSessionById(id);
-            if (session is null)
+            var Session = _sessionService.GetSessionById(id);
+            if (Session is null)
             {
-                TempData["ErrorMessage"] = "Session not Found";
+                TempData["ErrorMessage"] = "Session Not Found ";
                 return RedirectToAction(nameof(Index));
-            }
-            return View(session);
 
+            }
+            return View(Session);
         }
         public ActionResult Create()
         {

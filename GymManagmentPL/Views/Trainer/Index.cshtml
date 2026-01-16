@@ -1,5 +1,8 @@
 ﻿@using GymManagmentBLL.ViewModels.TrainerViewModel;
 @model IEnumerable<TrainerViewModel>
+@{
+    ViewData["Title"] = "Trainers";
+}
 
 @if (TempData["SuccessMessage"] != null)
 {
@@ -59,7 +62,7 @@ else if (TempData["ErrorMessage"] != null)
                                     <button class="btn btn-link p-0 border-0"
                                             type="button"
                                             data-bs-toggle="dropdown">
-                                        <img src="~/images/action dots.jpg" alt="actions" />
+                                        <i class="bi bi-three-dots fs-5 text-dark"></i>
                                     </button>
 
                                     <ul class="dropdown-menu dropdown-menu-start">

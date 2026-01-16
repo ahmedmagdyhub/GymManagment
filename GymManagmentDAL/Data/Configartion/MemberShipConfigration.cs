@@ -14,12 +14,7 @@ namespace GymManagmentDAL.Data.Configartion
         public void Configure(EntityTypeBuilder<MemberShip> builder)
         {
             builder.Property(X => X.CreatedAt).HasColumnName("StartDate");
-            builder.HasKey(A => new
-            {
-                A.MemberID,
-                A.PlanID 
-            });
-            builder.Ignore(A => A.Id);
+            
         }
     }
 }
