@@ -54,7 +54,7 @@ namespace GymManagmentBLL.Service.Classes
 
             var sessionVms = _mapper.Map<IEnumerable<SessionViewModel>>(sessions);
             foreach (var session in sessionVms)
-                session.AvielableSlot = session.Capicity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(session.ID);
+                session.AvielableSlot = session.Capacity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(session.ID);
             return sessionVms;
         }
 

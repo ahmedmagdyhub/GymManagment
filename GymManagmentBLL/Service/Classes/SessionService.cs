@@ -33,7 +33,7 @@ namespace GymManagmentBLL.Service.Classes
             //{
             //    ID = x.Id,
             //    Catogry_Name = x.SessionCategory.CategoryName.ToString(),
-            //    Capicity = x.Capacity,
+            //    Capacity = x.Capacity,
             //    Description = x.Description,
             //    StartDate = x.StartDate,
             //    EndDate = x.EndDate,
@@ -44,7 +44,7 @@ namespace GymManagmentBLL.Service.Classes
             var MappedSession = _mapper.Map<IEnumerable<Session>, IEnumerable<SessionViewModel>>(session);
             foreach (var sessions in MappedSession)
             {
-                sessions.AvielableSlot = sessions.Capicity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(sessions.ID);
+                sessions.AvielableSlot = sessions.Capacity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(sessions.ID);
             }
             return MappedSession;
         }
@@ -87,7 +87,7 @@ namespace GymManagmentBLL.Service.Classes
 
             //};
             var mappedsession = _mapper.Map<Session, SessionViewModel>(session);
-            mappedsession.AvielableSlot = mappedsession.Capicity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(mappedsession.ID);
+            mappedsession.AvielableSlot = mappedsession.Capacity - _unitOfWork.sessionReposatory.GetCountOfBookedSlot(mappedsession.ID);
             return mappedsession;
         }
 
